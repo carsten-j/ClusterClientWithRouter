@@ -28,9 +28,9 @@ namespace Samples.Cluster.ClusterClient.Worker
 
             // need to include ClusterClientReceptionist.DefaultConfig() to load serializers
 
-            var actorSystem = ActorSystem.Create("clusterNodes", config
-                .WithFallback(ClusterClientReceptionist.DefaultConfig())
-                .WithFallback(DistributedPubSub.DefaultConfig()));
+            var actorSystem = ActorSystem.Create("clusterNodes", config);
+                // .WithFallback(ClusterClientReceptionist.DefaultConfig())
+                // .WithFallback(DistributedPubSub.DefaultConfig()));
 
             var worker = actorSystem.ActorOf(Props.Create(() => new WorkerActor()), "work");
 

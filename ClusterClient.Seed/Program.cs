@@ -20,7 +20,7 @@ namespace Samples.Cluster.ClusterClient.Seed
                         routees.paths = [""/user/work""]
                         cluster {
                             enabled = on
-                            allow-local-routees = on
+                            allow-local-routees = off
                             use-role = worker
                         }
                     }
